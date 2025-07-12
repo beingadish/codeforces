@@ -1,0 +1,289 @@
+{
+    "CPP Template": {
+        "prefix": "cpp",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "#define max(a, b) (a < b ? b : a)",
+            "#define min(a, b) ((a > b) ? b : a)",
+            "#define mod 1e9 + 7",
+            "#define FOR(a, c) for (int(a) = 0; (a) < (c); (a)++)",
+            "#define FORL(a, b, c) for (int(a) = (b); (a) <= (c); (a)++)",
+            "#define FORR(a, b, c) for (int(a) = (b); (a) >= (c); (a)--)",
+            "#define INF 1000000000000000003",
+            "#define li long int",
+            "#define lli long li",
+            "#define ulli unsigned lli",
+            "#define uli unsigned li",
+            "typedef vector<int> vi;",
+            "typedef pair<int, int> pi;",
+            "#define F first",
+            "#define S second",
+            "#define PB push_back",
+            "#define POB pop_back",
+            "#define MP make_pair",
+            "",
+            "auto init = []() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "    cout.tie(NULL);",
+            "    return 0;",
+            "}();",
+            "",
+            "// Function to print vector",
+            "void printVector(vi v) {",
+            "    for (auto i : v) {",
+            "        cout << i << \" \";",
+            "    }",
+            "    cout << endl;",
+            "}",
+            "",
+            "// Function to print pair",
+            "void printPair(pi p) {",
+            "    cout << p.F << \" \" << p.S << endl;",
+            "}",
+            "",
+            "int main(){",
+            "    $0",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Complete C++ template with all macros and functions"
+    },
+    "CPP For Loop": {
+        "prefix": "for",
+        "body": [
+            "for(int i = 0; i < $1; i++) {",
+            "    $0",
+            "}"
+        ],
+        "description": "Standard for loop"
+    },
+    "CPP While Loop": {
+        "prefix": "while",
+        "body": [
+            "while($1) {",
+            "    $0",
+            "}"
+        ],
+        "description": "While loop"
+    },
+    "CPP If Statement": {
+        "prefix": "if",
+        "body": [
+            "if($1) {",
+            "    $0",
+            "}"
+        ],
+        "description": "If statement"
+    },
+    "CPP If-Else Statement": {
+        "prefix": "ifelse",
+        "body": [
+            "if($1) {",
+            "    $2",
+            "} else {",
+            "    $0",
+            "}"
+        ],
+        "description": "If-else statement"
+    },
+    "CPP Vector": {
+        "prefix": "vector",
+        "body": [
+            "vector<$1> $2;"
+        ],
+        "description": "Vector declaration"
+    },
+    "CPP Pair": {
+        "prefix": "pair",
+        "body": [
+            "pair<$1, $2> $3;"
+        ],
+        "description": "Pair declaration"
+    },
+    "CPP Map": {
+        "prefix": "map",
+        "body": [
+            "map<$1, $2> $3;"
+        ],
+        "description": "Map declaration"
+    },
+    "CPP Set": {
+        "prefix": "set",
+        "body": [
+            "set<$1> $2;"
+        ],
+        "description": "Set declaration"
+    },
+    "CPP Priority Queue": {
+        "prefix": "pq",
+        "body": [
+            "priority_queue<$1> $2;"
+        ],
+        "description": "Priority queue declaration"
+    },
+    "CPP Function": {
+        "prefix": "func",
+        "body": [
+            "$1 $2($3) {",
+            "    $0",
+            "}"
+        ],
+        "description": "Function definition"
+    },
+    "CPP Class": {
+        "prefix": "class",
+        "body": [
+            "class $1 {",
+            "public:",
+            "    $0",
+            "};"
+        ],
+        "description": "Class definition"
+    },
+    "CPP Sort": {
+        "prefix": "sort",
+        "body": [
+            "sort($1.begin(), $1.end());"
+        ],
+        "description": "Sort vector"
+    },
+    "CPP Reverse Sort": {
+        "prefix": "rsort",
+        "body": [
+            "sort($1.begin(), $1.end(), greater<int>());"
+        ],
+        "description": "Sort vector in descending order"
+    },
+    "CPP Binary Search": {
+        "prefix": "bs",
+        "body": [
+            "int left = 0, right = $1.size() - 1;",
+            "while(left <= right) {",
+            "    int mid = left + (right - left) / 2;",
+            "    if($1[mid] == $2) {",
+            "        return mid;",
+            "    } else if($1[mid] < $2) {",
+            "        left = mid + 1;",
+            "    } else {",
+            "        right = mid - 1;",
+            "    }",
+            "}",
+            "return -1;"
+        ],
+        "description": "Binary search implementation"
+    },
+    "CPP GCD": {
+        "prefix": "gcd",
+        "body": [
+            "int gcd(int a, int b) {",
+            "    if(b == 0) return a;",
+            "    return gcd(b, a % b);",
+            "}"
+        ],
+        "description": "GCD function"
+    },
+    "CPP LCM": {
+        "prefix": "lcm",
+        "body": [
+            "int lcm(int a, int b) {",
+            "    return (a * b) / gcd(a, b);",
+            "}"
+        ],
+        "description": "LCM function"
+    },
+    "CPP Prime Check": {
+        "prefix": "prime",
+        "body": [
+            "bool isPrime(int n) {",
+            "    if(n <= 1) return false;",
+            "    if(n <= 3) return true;",
+            "    if(n % 2 == 0 || n % 3 == 0) return false;",
+            "    for(int i = 5; i * i <= n; i += 6) {",
+            "        if(n % i == 0 || n % (i + 2) == 0) return false;",
+            "    }",
+            "    return true;",
+            "}"
+        ],
+        "description": "Prime number check"
+    },
+    "CPP Fast Power": {
+        "prefix": "pow",
+        "body": [
+            "int fastPow(int base, int exp, int mod) {",
+            "    int result = 1;",
+            "    base %= mod;",
+            "    while(exp > 0) {",
+            "        if(exp & 1) result = (result * base) % mod;",
+            "        base = (base * base) % mod;",
+            "        exp >>= 1;",
+            "    }",
+            "    return result;",
+            "}"
+        ],
+        "description": "Fast power with modulo"
+    },
+    "CPP DFS": {
+        "prefix": "dfs",
+        "body": [
+            "void dfs(int node, vector<bool>& visited, vector<vector<int>>& graph) {",
+            "    visited[node] = true;",
+            "    for(int neighbor : graph[node]) {",
+            "        if(!visited[neighbor]) {",
+            "            dfs(neighbor, visited, graph);",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "DFS implementation"
+    },
+    "CPP BFS": {
+        "prefix": "bfs",
+        "body": [
+            "void bfs(int start, vector<bool>& visited, vector<vector<int>>& graph) {",
+            "    queue<int> q;",
+            "    q.push(start);",
+            "    visited[start] = true;",
+            "    while(!q.empty()) {",
+            "        int node = q.front();",
+            "        q.pop();",
+            "        for(int neighbor : graph[node]) {",
+            "            if(!visited[neighbor]) {",
+            "                visited[neighbor] = true;",
+            "                q.push(neighbor);",
+            "            }",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "BFS implementation"
+    },
+    "CPP DSU": {
+        "prefix": "dsu",
+        "body": [
+            "class DSU {",
+            "private:",
+            "    vector<int> parent, rank;",
+            "public:",
+            "    DSU(int n) {",
+            "        parent.resize(n);",
+            "        rank.resize(n, 0);",
+            "        for(int i = 0; i < n; i++) parent[i] = i;",
+            "    }",
+            "    int find(int x) {",
+            "        if(parent[x] != x) parent[x] = find(parent[x]);",
+            "        return parent[x];",
+            "    }",
+            "    void unite(int x, int y) {",
+            "        int px = find(x), py = find(y);",
+            "        if(px == py) return;",
+            "        if(rank[px] < rank[py]) swap(px, py);",
+            "        parent[py] = px;",
+            "        if(rank[px] == rank[py]) rank[px]++;",
+            "    }",
+            "};"
+        ],
+        "description": "Disjoint Set Union (DSU) implementation"
+    }
+}
